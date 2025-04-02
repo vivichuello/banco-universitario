@@ -1,24 +1,36 @@
-*{
+/*Configuracion General*/
+
+* {
     box-sizing: border-box;
 }
 
-h1{ font-size: 3.5em;}
-h2{ font-size: 2em;}
-h3{ font-size: 1.3em;}
-h4{font-size: 1.2em;}
-p{font-size: 1.3;}
-
 @font-face {
-    font-family: 'montserrat';
-    src: url('../assets/montserrat-rlternates-regular.ttf') format('truetype');
+    font-family: 'montserrat'; /* Se corrige el uso de ':' */
+    src: url('../assets/montserrat-rlternates-regular.ttf') format('truetype'); /* Se ajusta la ruta y sintaxis */
 }
 
-body{
+.color-fuente {
+    color: rgb(8,95,99); /* Se incluye ':' */
+}
+
+.grosor-fuente {
+    font-weight: lighter; /* Se corrige ':' */
+    color: rgb(8,95,99); /* Se incluye ':' */
+}
+
+
+body {
     margin: 0;
-    font-family: 'montserrat',sans-serif;
+    font-family: 'montserrat', sans-serif;
 }
 
-button{
+h1 { font-size: 3.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.3em; }
+h4 { font-size: 1.2em; }
+p { font-size: 1.3em; }
+
+button {
     font-size: 1em;
     font-weight: bold;
     padding: 10px 20px;
@@ -26,97 +38,80 @@ button{
     color: rgb(8,95,99);
     background-color: rgb(255, 255, 255);
     border-color: rgb(255, 255, 255);
-
 }
 
-button:hover{
+button:hover {
     background-color: rgb(228, 228, 228);
 }
 
 
+/*Diseño de tarjetas informativas*/
+
 #tarjetas-informativas {
     color: white;
-    background-color: rgb(218, 32, 32);
-    h2{
-        font-size: 1.5em;
-    }
-    text-align: center;
-
-
+    text-align: center; /* Centra texto dentro de la sección */
 }
 
-#tarjetas-informativas .contenedor{
-    
-    padding: 100px 20px;
-    p {
-        margin: 40px;
-        padding: 30px 0px
-
-    };
-    min-height: 500px;
-    min-height: 300px;
-   
-
+#tarjetas-informativas .contenedor {
+    padding: 0 10px; /* Márgenes laterales */
+    max-width: 1200px; /* Limita el ancho */
+    margin: 0 auto; /* Centra el contenedor */
+    display: flex; /* Alinea las tarjetas en filas */
+    flex-wrap: wrap; /* Permite que bajen a nuevas filas si es necesario */
+    gap: 20px; /* Espaciado uniforme entre tarjetas */
+    justify-content: center; /* Centra las tarjetas en la versión móvil */
 }
 
-#tarjetas-informativas .tarjeta{
-    padding: 50px 10px;
+#tarjetas-informativas .tarjeta {
+    flex: 0 1 clamp(300px, 50%, 600px); /* Ancho dinámico con límites */
+    padding: 10px;
     background-size: cover;
     background-position: center;
-    margin: 30px;
     border-radius: 20px;
-    min-width: 100px;
-    min-height: 400px;
-   
-
+    height: 450px; /* Altura fija */
+    box-sizing: border-box;
 }
 
-.tarjeta:nth-child(1){
+/* Estilos específicos para tarjetas individuales */
+.tarjeta:nth-child(1) {
     background-image: linear-gradient(
         0deg,
         rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    )
-    ,url('../assets/cerdito.jpeg');
-
+        rgba(0,0,0,0.2)
+    ), url('../assets/cerdito.jpeg');
 }
 
-.tarjeta:nth-child(2){
+.tarjeta:nth-child(2) {
     background-image: linear-gradient(
-        0deg,
+        90deg,
         rgba(0, 0, 0, 0.5),
-        rgba(0,0,0,0.5)
-    )
-    ,url('../assets/secretaria.jpeg');
-   
+        rgba(0,0,0,0.2)
+    ), url('../assets/secretaria.jpeg');
 }
 
-
-.tarjeta:nth-child(3){
+.tarjeta:nth-child(3) {
     background-image: linear-gradient(
         0deg,
         rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    )
-    ,url('../assets/acuerdo.jpeg');
-    
+        rgba(0,0,0,0.2)
+    ), url('../assets/acuerdo.jpeg');
 }
 
-.tarjeta:nth-child(4){
+.tarjeta:nth-child(4) {
     background-image: linear-gradient(
         0deg,
         rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    )
-    ,url('../assets/graduacion.jpeg');
+        rgba(0,0,0,0.2)
+    ), url('../assets/graduacion.jpeg');
 }
 
-
+/*Diseño del pie de pagina*/
 
 footer {
     text-align: center;
-    
 }
+
+
 
 
 footer #ultimo {
@@ -126,24 +121,49 @@ footer #ultimo {
     padding: 5px;
 }
 
-
-footer .redes-sociales{
-    
-
-}
+footer .redes-sociales { }
 
 footer .svg-icon {
-    
     padding: 0px 10px;
     width: 60px;
     height: 60px;
-    
-    transition: fill 0.3s ease, transform 0.3s ease; /* Animación suave */
+    transition: fill 0.3s ease, transform 0.3s ease;
     opacity: 1;
 }
 
 footer .svg-icon:hover {
     transform: scale(1.4); /* Agranda la imagen */
-    filter: invert(48%) sepia(49%) saturate(350%) hue-rotate(135deg) brightness(1) contrast(1); /* Simula el color rgb(73,190,183) */
+    filter: invert(48%) sepia(49%) saturate(350%) hue-rotate(135deg) brightness(1) contrast(1);
 }
 
+/* Diseño responsive */
+
+@media (min-width: 720px) {
+    #tarjetas-informativas .contenedor {
+        justify-content: center; /* Centra las tarjetas en pantalla */
+    }
+
+    #tarjetas-informativas .tarjeta {
+        flex: 0 1 clamp(300px, 48%, 600px); /* Fluidez con límites en pantallas grandes */
+    }
+    footer .contenedor-pie {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around; /* Espaciado uniforme */
+        align-items: center;
+        gap: 30px; /* Espaciado entre bloques */
+        margin: 0 auto;
+        width: 90%; /* Asegura que ocupe el ancho correcto */
+    }
+    
+    footer .contenedor-pie > div {
+        flex: 1 1 200px; /* Permite que todos los bloques sean al menos de 200px */
+        min-width: 200px; /* Ancho mínimo uniforme */
+        text-align: center; /* Centra el contenido */
+        word-wrap: break-word; /* Rompe palabras largas si no caben */
+        overflow-wrap: break-word; /* Alternativa moderna compatible */
+        white-space: normal; /* Permite que el texto fluya en líneas múltiples */
+    }
+    
+    
+}

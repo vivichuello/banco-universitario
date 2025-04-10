@@ -8,42 +8,19 @@
 </head>
 <body>
     <!--Encabezado-->
-    <header class="encabezado">
+    <section id="encabezado-seccion">
 
-        <div class="franja"></div>
-        
-        <nav class="nav">
-            <div class="nav-contenedor">
+        <div id="encabezado"></div>
+        <script>
 
-                <figure class="nav-figura">
-                    <img src="../assets/logo-no-background.png" alt="logo" class="nav-logo">
-                </figure>
-
-                <label class="nav-checkbox">
-                    <input type="checkbox" id="menu-entrada" class="nav-checkbox-entrada">
-                </label>
-
-                <ul class="nav-lista">
-
-                    <li class="nav-item inicio">
-                        <a href="#" class="nav-link">Inicio</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Acerca de nosotros</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Servicios</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="#" class="nav-link boton">Banca en linea</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+            fetch('./encabezado.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('encabezado').innerHTML = data;
+                })
+                .catch(error => console.error('Error al cargar el encabezado:', error));
+        </script>
+    </section>
 
     <!--Primera galeria de imagenes-->
     <section id="promociones"></section>

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banco Universitario</title>
     <link rel="stylesheet" href="./sitio_web_institucional.css">
 </head>
+
 <body>
     <!--Encabezado-->
     <section id="encabezado-seccion">
@@ -22,8 +24,42 @@
         </script>
     </section>
 
-    <!--Primera galeria de imagenes-->
-    <section id="promociones"></section>
+    <!--Slider de tarjetas-->
+    <section id="slider-seccion">
+        <div class="slider-contenedor">
+            <div class="slider">
+
+                <article class="slider-tarjeta" id="tarjeta-1">
+                    <img src="../assets/estudiantes.jpeg" alt="">
+                    <div class="slider-tarjeta-texto">
+                        <h2>¡Paga sin comision!</h2>
+                        <p>Realiza transferencias a tus amigos y <br>compañeros sin pagar demas</p>
+                    </div>
+                </article>
+
+                <article class="slider-tarjeta" id="tarjeta-2">
+                    <img src="../assets/bolivares.png" alt="">
+                    <div class="slider-tarjeta-texto">
+                        <h2>¡Cobra tus becas en <br>nuestras sucursales¡</h2>
+                        <p>Ahora con Banco Universitario es mas facil cobrar tus beneficios</p>
+                    </div>
+                </article>
+                <article class="slider-tarjeta" id="tarjeta-3">
+                    <img src="../assets/estudiante.jpeg">
+                    <div class="slider-tarjeta-texto">
+                        <h2>¡Paga tu matricula en linea!</h2>
+                        <p>Paga tu matricula estudiantil en cualquier <br> momento, servicio 24 horas</p>
+                    </div>
+                </article>
+
+            </div>
+            <div class="slider-nav">
+                <a href="#tarjeta-1"></a>
+                <a href="#tarjeta-2"></a>
+                <a href="#tarjeta-3"></a>
+            </div>
+        </div>
+    </section>
 
     <!--Iconos-->
     <section id="cuentas-tarjetas-limites"></section>
@@ -34,4 +70,5 @@
     <!--Pie de pagina-->
     <footer></footer>
 </body>
+
 </html>

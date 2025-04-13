@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banco Universitario</title>
-    <link rel="stylesheet" href="./sitio_web_institucional.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
+    <!-- Archivo CSS principal -->
+    <link rel="stylesheet" href="./sitio_web_institucional.css">
+
+    <!-- Archivo CSS del footer -->
+    <link rel="stylesheet" href="./footer.css">
+
+    <!-- Fuente Awesome para iconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
     <!--Encabezado-->
     <header></header>
@@ -39,7 +46,7 @@
             
             <div class = "tarjeta">
                 <h2>Conoce mas sobre nosotros</h2>
-                <button>¡Conócenos!</button>
+                <button onclick="location.href='quienes_somos.html'">¡Conócenos!</button>
             </div>
             
             <div class = "tarjeta">
@@ -55,64 +62,18 @@
 
 
     <!--Pie de pagina-->
-    <footer>
-        <h3 style="display: flex; justify-content: center; align-items: center;font-weight: lighter;color: rgb(8,95,99);">BANCO UNIVERSITARIO</h3>
-        <div class="contenedor-pie">
-
-
-            <div>
-                <h4 class = "color-fuente">Sede Principal</h4>
-            
-                <p>
-                    Dirección: Av. Universidad, <br>
-                    Edificio Banco Universitario, piso 12, <br>
-                    Caracas, Venezuela.
-
-                </p>
-            </div>
-
-            <div>
-                
-                <h4 style="font-weight: bolder;color: rgb(8,95,99);">Contacto</h4>
-                <p>
-                    Teléfono: +58 212-555-5555 <br>
-                    Fax: +58 212-555-5556 <br>
-                    Correo: <br>
-                    info@bancouniversitario.com.ve 
-                </p>
-            </div>
-
-            <div class="redes-sociales">
-                <h4 class = "color-fuente">Redes Sociales</h4>
-                
-                
-                <div class="iconos">
-                    <a href="https://www.facebook.com" target="_blank">
-                        <img src="../assets/square-facebook-brands.svg" alt="Facebook" class="svg-icon">
-                    </a>
-                    <a href="https://www.twitter.com" target="_blank">
-                        <img src="../assets/square-x-twitter-brands.svg" alt="Facebook" class="svg-icon">                   
-                     </a>
-                    <a href="https://www.instagram.com" target="_blank">
-                        <img src="../assets/square-instagram-brands.svg" alt="Facebook" class="svg-icon">                   
-                     </a>
-                    
-                </div>
-                
-                <p>
-                    @bancouniversitariove
-                </p>
-            </div>
-        </div>
-            
-        <div id="ultimo">
-            <p>
-                Banco Universitario, 2025.
-                Todos los derechos reservados.
-            </p>
-        </div>
-
-        
-    </footer>
+    <section id ="footer-seccion">
+          
+        <div id="footer"></div>
+        <script>
+            // Cargar el contenido del footer dinámicamente
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('footer').innerHTML = html;
+                });
+        </script>
+   
+    </section>
 </body>
 </html>

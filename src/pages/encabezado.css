@@ -124,6 +124,8 @@ body{
 
     .franja{
         display: block;
+        position: relative;
+        z-index: 100;
     }
     .nav-contenedor{
         --transform-mostrar-menu: translate(0);

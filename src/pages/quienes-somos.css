@@ -1,0 +1,49 @@
+/* Fondo general con gradiente y estilos básicos */
+.fondo {
+    background: linear-gradient(to right, rgb(8,95,99), rgb(73,190,183));
+    color: white;
+    padding: 20px;
+    margin-bottom: 50px; /* Espacio hacia abajo entre las divisiones */
+}
+
+/* Estilos específicos para los elementos dentro de .fondo */
+.fondo h1 {
+    font-size: 4em;
+    text-align: center;
+    margin: 0px; /* Elimina márgenes para el título */
+}
+
+.fondo p {
+    text-align: center;
+    padding: 0px; /* Sin espacio interno extra */
+    font-size: 1.5em; /* Tamaño del texto */
+    margin: 25px; /* Espacio entre párrafos */
+}
+
+.fondo ul {
+    font-size: 1.5em; /* Tamaño del texto */
+    margin: 30px 0px 30px 0px; /* Espacio para la lista */
+    text-align: left; /* Alineación hacia la izquierda */
+    padding: 0px; /* Sin espacio interno extra */
+}
+
+.fondo li {
+    margin: 30px 0px 30px 30px; /* Espacio alrededor de cada elemento de la lista */
+}
+
+/* Estilos para redondear esquinas derechas */
+.redondeo-derecha {
+    border-radius: 0px 50px 50px 0px; /* Solo esquinas derechas redondeadas */
+    margin: 25px 20px 25px 0px; /* Márgenes específicos para separación */
+}
+
+/* Estilos para redondear esquinas izquierdas */
+.redondeo-izquierda {
+    border-radius: 50px 0px 0px 50px; /* Solo esquinas izquierdas redondeadas */
+    margin: 25px 0px 25px 20px; /* Márgenes específicos para separación */
+}
+
+/* Margen general para el contenedor quienes somos */
+#quienes_somos .fondo{
+    margin-bottom: 50px; /* Espacio alrededor de la sección principal */
+}

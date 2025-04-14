@@ -4,8 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banco Universitario</title>
+
+    <!-- Archivo CSS principal -->
     <link rel="stylesheet" href="./sitio_web_institucional.css">
+
+    <!-- Archivo CSS del footer -->
+    <link rel="stylesheet" href="./footer.css">
+
+    <!-- Fuente Awesome para iconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
     <!--Encabezado-->
     <header></header>
@@ -17,9 +26,54 @@
     <section id="cuentas-tarjetas-limites"></section>
 
     <!--Tarjetas-->
-    <section id="tarjetas-informativas"></section>
+    <section id="tarjetas-informativas">
+        <div class="contenedor">
+
+            <div class = "tarjeta">
+                <h2>Resguarda tu futuro</h2>
+                <p>Saber manejar tu dinero es vital, aprende con nosotros 
+                    sobre la educación finaciera</p>
+                <button>¡Haz click aqui!</button>
+            </div>
+        
+
+            <div class = "tarjeta">
+                <h2>Servicios Presenciales</h2>
+                <p>Descubre todo lo que puedes hacer 
+                    en nuestras sucursales</p>
+                <button>¡Presiona aqui!</button>
+            </div>
+            
+            <div class = "tarjeta">
+                <h2>Conoce mas sobre nosotros</h2>
+                <button onclick="location.href='quienes_somos.html'">¡Conócenos!</button>
+            </div>
+            
+            <div class = "tarjeta">
+                <h2>Comprometidos con el futuro del país</h2>
+                <p>Tenemos como meta formar alianzas poderosas
+                para potenciar el futuro de nuestros estudiantes</p>
+                <button>¡Quiero saber más!</button>
+        
+            </div>
+        </div>
+    </section>
+
+
 
     <!--Pie de pagina-->
-    <footer></footer>
+    <section id ="footer-seccion">
+          
+        <div id="footer"></div>
+        <script>
+            // Cargar el contenido del footer dinámicamente
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('footer').innerHTML = html;
+                });
+        </script>
+   
+    </section>
 </body>
 </html>

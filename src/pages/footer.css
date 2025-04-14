@@ -1,0 +1,49 @@
+/*Diseño del pie de página*/
+
+footer {
+    text-align: center;
+}
+
+footer #ultimo {
+    background-color: rgb(8, 95, 99);
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+footer .redes-sociales { }
+
+footer .svg-icon {
+    padding: 0px 10px;
+    width: 60px;
+    height: 60px;
+    transition: fill 0.3s ease, transform 0.3s ease;
+    opacity: 1;
+}
+
+footer .svg-icon:hover {
+    transform: scale(1.4); /* Agranda la imagen */
+    filter: invert(48%) sepia(49%) saturate(350%) hue-rotate(135deg) brightness(1) contrast(1);
+}
+
+/* Diseño responsive */
+@media (min-width: 720px) {
+    footer .contenedor-pie {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around; /* Espaciado uniforme */
+        align-items: center;
+        gap: 30px; /* Espaciado entre bloques */
+        margin: 0 auto;
+        width: 90%; /* Asegura que ocupe el ancho correcto */
+    }
+
+    footer .contenedor-pie > div {
+        flex: 1 1 200px; /* Permite que todos los bloques sean al menos de 200px */
+        min-width: 200px; /* Ancho mínimo uniforme */
+        text-align: center; /* Centra el contenido */
+        word-wrap: break-word; /* Rompe palabras largas si no caben */
+        overflow-wrap: break-word; /* Alternativa moderna compatible */
+        white-space: normal; /* Permite que el texto fluya en líneas múltiples */
+    }
+}

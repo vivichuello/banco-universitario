@@ -1,7 +1,122 @@
-*{
+/*Configuracion General*/
+
+* {
     box-sizing: border-box;
 }
 
-body{
+@font-face {
+    font-family: 'montserrat'; 
+    src: url('../assets/Montserrat Alternates Regular.ttf') format('truetype'); 
+}
+
+.color-fuente {
+    color: rgb(8,95,99);
+}
+
+.grosor-fuente {
+    font-weight: lighter;
+    color: rgb(8,95,99); 
+}
+
+body {
     margin: 0;
+    font-family: 'montserrat', sans-serif;
+}
+
+
+
+
+
+
+
+/*Diseño de tarjetas informativas*/
+
+#tarjetas-informativas {
+    color: white;
+    text-align: center; 
+    h1 { font-size: 3.5em; }
+    h2 { font-size: 2em; }
+    h3 { font-size: 1.3em; }
+    h4 { font-size: 1.2em; }
+    p { font-size: 1.3em; }
+}
+
+#tarjetas-informativas .contenedor {
+    padding: 0 10px; /* Márgenes laterales */
+    max-width: 1200px; /* Limita el ancho */
+    margin: 0 auto; /* Centra el contenedor */
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 20px;
+    justify-content: center; 
+}
+
+#tarjetas-informativas .tarjeta {
+    flex: 0 1 clamp(300px, 50%, 600px); /* Ancho dinámico con límites */
+    padding: 10px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    height: 450px; /* Altura fija */
+    box-sizing: border-box;
+}
+
+#tarjetas-informativas .tarjeta button {
+    font-size: 1em; /* Exclusivo para tarjetas */
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: rgb(8,95,99);
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+}
+
+#tarjetas-informativas .tarjeta button:hover {
+    background-color: rgb(228, 228, 228); /* Solo afecta los botones de las tarjetas */
+}
+
+
+/* Estilos específicos para tarjetas individuales */
+.tarjeta:nth-child(1) {
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.2)
+    ), url('../assets/cerdito.jpeg');
+}
+
+.tarjeta:nth-child(2) {
+    background-image: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0,0,0,0.2)
+    ), url('../assets/secretaria.jpeg');
+}
+
+.tarjeta:nth-child(3) {
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.2)
+    ), url('../assets/acuerdo.jpeg');
+}
+
+.tarjeta:nth-child(4) {
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.2)
+    ), url('../assets/graduacion.jpeg');
+}
+
+/* Diseño responsive */
+
+@media (min-width: 720px) {
+    #tarjetas-informativas .contenedor {
+        justify-content: center; 
+    }
+
+    #tarjetas-informativas .tarjeta {
+        flex: 0 1 clamp(300px, 48%, 600px); /* Fluidez con límites en pantallas grandes */
+    }
 }

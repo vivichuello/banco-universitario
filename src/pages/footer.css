@@ -1,9 +1,31 @@
 /*Diseño del pie de página*/
 
+.color-fuente {
+    color: rgb(8,95,99);
+}
+
+.grosor-fuente {
+    font-weight: lighter;
+    color: rgb(8,95,99); 
+}
 footer {
     text-align: center;
 }
+footer h3 {
+    font-size: 2rem;
+    margin-bottom: 5px;
 
+}
+
+footer h4 {
+    font-size: 1.6rem; 
+    
+}
+
+footer p {
+    font-size: 1.2rem; 
+    
+}
 footer #ultimo {
     background-color: rgb(8, 95, 99);
     color: white;
@@ -12,8 +34,13 @@ footer #ultimo {
 }
 
 footer .redes-sociales {
-
+    h4 {padding-top: 30px;
+        margin-top: 10px;
+        margin-bottom: 20px;}
 }
+
+
+
 
 footer .iconos {
    

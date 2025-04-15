@@ -9,14 +9,7 @@
     src: url('../assets/Montserrat Alternates Regular.ttf') format('truetype'); 
 }
 
-.color-fuente {
-    color: rgb(8,95,99);
-}
 
-.grosor-fuente {
-    font-weight: lighter;
-    color: rgb(8,95,99); 
-}
 
 body {
     margin: 0;
@@ -176,7 +169,7 @@ body {
     h2 { font-size: 2em; }
     h3 { font-size: 1.3em; }
     h4 { font-size: 1.2em; }
-    p { font-size: 1.3em; }
+    p { font-size: 1.3em;}
 }
 
 #tarjetas-informativas .contenedor {
@@ -191,27 +184,50 @@ body {
 
 #tarjetas-informativas .tarjeta {
     flex: 0 1 clamp(300px, 50%, 600px); /* Ancho dinámico con límites */
-    padding: 10px;
+    padding: 20px;
     background-size: cover;
     background-position: center;
     border-radius: 20px;
     height: 450px; /* Altura fija */
     box-sizing: border-box;
-}
+    
 
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-evenly; 
+    align-items: center; 
+    text-align: center;
+}
+#tarjetas-informativas .tarjeta p{
+    line-height: 1.5;
+    font-weight: 550;
+}
 #tarjetas-informativas .tarjeta button {
-    font-size: 1em; /* Exclusivo para tarjetas */
+    font-size: 1.3em; /* Exclusivo para tarjetas */
     font-weight: bold;
     padding: 10px 20px;
     border-radius: 10px;
     color: rgb(8,95,99);
     background-color: rgb(255, 255, 255);
     border-color: rgb(255, 255, 255);
+    cursor: pointer;
+    margin-top: auto;
+    margin-bottom: 15px;
+    
 }
 
 #tarjetas-informativas .tarjeta button:hover {
-    background-color: rgb(228, 228, 228); /* Solo afecta los botones de las tarjetas */
+    background-color: rgb(230, 230, 230); /* Color más oscuro para el hover */
+    filter: brightness(0.9); /* Ajusta el brillo */
+    transition: background-color 0.3s ease; /* Animación suave */
 }
+
+#tarjetas-informativas .tarjeta button:active {
+    background-color: rgb(150, 150, 150); /* Color aún más oscuro para el clic */
+    filter: brightness(0.8); /* Reduce el brillo ligeramente */
+}
+
+
 
 
 /* Estilos específicos para tarjetas individuales */
@@ -242,10 +258,27 @@ body {
 .tarjeta:nth-child(4) {
     background-image: linear-gradient(
         0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.2)
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.2)
     ), url('../assets/graduacion.jpeg');
+    background-size: cover;
+    background-position: center;
+
+    h2 {
+        margin-bottom: 10px; 
+    }
+
+    p {
+        margin-top: 5px; 
+        margin-bottom: 15px; /* Espaciado adicional debajo del párrafo */
+    }
+
+    button {
+        margin-top: auto; /* Mantiene el botón al final */
+        margin-bottom: 15px; /* Espacio adicional debajo del botón */
+    }
 }
+
 
 /*ESTILOS PARA PANTALLAS MAS GRANDES*/
 

@@ -11,20 +11,40 @@ footer #ultimo {
     padding: 5px;
 }
 
-footer .redes-sociales { }
+footer .redes-sociales {
+
+}
+
+footer .iconos {
+   
+    display: flex;
+    justify-content: center; /* Centra los íconos */
+    align-items: center; /* Alinea verticalmente */
+    gap: 15px; /* Espaciado uniforme entre íconos */
+    flex-wrap: wrap; /* En caso de que necesiten ajustar el espacio */
+    width: 100%; /* Ocupa el ancho sin problemas */
+    overflow: hidden;
+    
+}
 
 footer .svg-icon {
     padding: 0px 10px;
     width: 60px;
     height: 60px;
-    transition: fill 0.3s ease, transform 0.3s ease;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Efecto suave para el crecimiento */
     opacity: 1;
+    transform: scale(1); /* Tamaño original por defecto */
+    transform-origin: center; /* Ajuste desde el centro */
 }
 
-footer .svg-icon:hover {
-    transform: scale(1.4); /* Agranda la imagen */
+footer .svg-icon:hover,
+footer .svg-icon:active {
+    transform: scale(1.4); /* Agranda el ícono mientras interactúas con él */
     filter: invert(48%) sepia(49%) saturate(350%) hue-rotate(135deg) brightness(1) contrast(1);
 }
+
+
+
 
 /* Diseño responsive */
 @media (min-width: 720px) {
@@ -45,5 +65,13 @@ footer .svg-icon:hover {
         word-wrap: break-word; /* Rompe palabras largas si no caben */
         overflow-wrap: break-word; /* Alternativa moderna compatible */
         white-space: normal; /* Permite que el texto fluya en líneas múltiples */
+    }
+    
+}
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 720px) {
+    footer .svg-icon:hover {
+        transform: none; /* Desactiva el agrandamiento en móviles */
+        filter: none; /* Evita el cambio de color */
     }
 }

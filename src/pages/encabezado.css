@@ -173,3 +173,12 @@ body{
         padding: 0.5rem 1rem;
     }
 }
+@media (max-width: 600px) {
+    .nav-lista {
+        transform: translate(-100%); /* Oculta el menú por defecto */
+    }
+
+    .nav-contenedor:has(.nav-checkbox-entrada:checked) .nav-lista {
+        transform: translate(0); /* Despliega el menú solo si el checkbox está marcado */
+    }
+}

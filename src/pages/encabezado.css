@@ -17,12 +17,16 @@ body{
 /*Encabezado*/
 
 .encabezado{
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    z-index: 1000;
+    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     gap: 10px;
-    margin-bottom: 2.5rem;
 }
 
 .franja{

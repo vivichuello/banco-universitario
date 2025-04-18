@@ -200,6 +200,8 @@ body {
     font-weight: 550;
 }
 #tarjetas-informativas .tarjeta button {
+    all: unset;
+    font-family: 'Montserrat', sans-serif; 
     font-size: 1.3em; /* Exclusivo para tarjetas */
     font-weight: bold;
     padding: 10px 20px;

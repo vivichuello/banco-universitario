@@ -163,7 +163,8 @@ body {
     color: white;
     text-align: center; 
     h1 { font-size: 3.5em; }
-    h2 { font-size: 2em; }
+    h2 { font-size: 2em;
+        text-shadow: 3px 3px 5px black; }
     h3 { font-size: 1.3em; }
     h4 { font-size: 1.2em; }
     p { font-size: 1.3em;}
@@ -191,13 +192,14 @@ body {
 
     display: flex; 
     flex-direction: column;
-    justify-content: space-evenly; 
+    justify-content: space-between; 
     align-items: center; 
     text-align: center;
 }
 #tarjetas-informativas .tarjeta p{
     line-height: 1.5;
     font-weight: 550;
+    text-shadow: 3px 3px 4px black;
 }
 #tarjetas-informativas .tarjeta button {
     all: unset;
@@ -219,6 +221,7 @@ body {
     background-color: rgb(230, 230, 230); /* Color más oscuro para el hover */
     filter: brightness(0.9); /* Ajusta el brillo */
     transition: background-color 0.3s ease; /* Animación suave */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
 }
 
 #tarjetas-informativas .tarjeta button:active {

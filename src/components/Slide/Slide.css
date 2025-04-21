@@ -1,0 +1,56 @@
+/*Configuracion General*/
+
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'montserrat'; 
+    src: url('../../assets/Montserrat\ Alternates\ Regular.ttf') format('truetype'); 
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.slide-contenedor {
+    position: relative;
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.slide-contenedor img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-texto {
+    position: absolute;
+    color: white;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+
+    background-color: rgba(73, 190, 183, 0.8);
+    padding: 0.5rem 0.5rem 1.5rem 0.5rem;
+    border-radius: 0.5rem;
+    width: 100%;
+}
+
+.slide-texto h2 {
+    font-size: clamp(1.5rem, 2vw + 1rem, 2.8rem);
+    margin: 0 0 0 0;
+    margin-block-end: 0.5rem;
+    margin-block-start: 0.5rem;
+}
+
+.slider-texto p {
+    font-size: clamp(0.9rem, 1vw + 0.5rem, 1.8rem);
+    margin: 0 0 0 0;
+}

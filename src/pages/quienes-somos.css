@@ -1,49 +1,127 @@
-/* Fondo general con gradiente y estilos básicos */
-.fondo {
-    background: linear-gradient(to right, rgb(8,95,99), rgb(73,190,183));
-    color: white;
+/* Configuración base */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 100px; /* Espacio reservado para el encabezado fijo */
+}
+
+header.encabezado {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: white;
+}
+
+/* Estilo general para los bloques */
+.bloque {
+    display: flex;
+    flex-wrap: wrap; /* Ajusta contenido en móvil */
+    align-items: center; /* Alinea verticalmente elementos */
+    margin: 30px 0;
     padding: 20px;
-    margin-bottom: 50px; /* Espacio hacia abajo entre las divisiones */
+    background: linear-gradient(to right, rgb(8, 95, 99), rgb(73, 190, 183)); /* Gradiente para fondo */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra elegante */
 }
 
-/* Estilos específicos para los elementos dentro de .fondo */
-.fondo h1 {
-    font-size: 4em;
-    text-align: center;
-    margin: 0px; /* Elimina márgenes para el título */
+/* Estilo para las imágenes */
+.bloque img {
+    flex: 1;
+    width: 100%; /* Ocupa todo el ancho en móvil */
+    max-width: 600px; /* Limita el tamaño máximo */
+    margin-bottom: 15px; /* Espacio debajo de imagen */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra en imágenes */
 }
 
-.fondo p {
-    text-align: center;
-    padding: 0px; /* Sin espacio interno extra */
-    font-size: 1.5em; /* Tamaño del texto */
-    margin: 25px; /* Espacio entre párrafos */
+/* Contenedor para texto (títulos y párrafos) */
+.texto {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Mantiene título y texto en columna */
+    align-items: center; /* Centra el texto */
+    padding: 0 20px; /* Espaciado interno alrededor del texto */
+    text-shadow: 3px 3px 4px black; /* Sombra en el texto */
 }
 
-.fondo ul {
-    font-size: 1.5em; /* Tamaño del texto */
-    margin: 30px 0px 30px 0px; /* Espacio para la lista */
-    text-align: left; /* Alineación hacia la izquierda */
-    padding: 0px; /* Sin espacio interno extra */
+.texto h1 {
+    font-size: 1.8rem; /* Tamaño predeterminado de títulos */
+    color: white; /* Color de los títulos */
+    margin-bottom: 10px; /* Espaciado inferior */
+    text-align: center; /* Títulos centrados */
+    letter-spacing: 1.5px; /* Espaciado entre letras */
 }
 
-.fondo li {
-    margin: 30px 0px 30px 30px; /* Espacio alrededor de cada elemento de la lista */
+.texto p {
+    font-size: 1.1rem; /* Tamaño predeterminado de párrafos */
+    line-height: 1.6; /* Altura de línea para mejor legibilidad */
+    color: white; /* Color del texto */
+    margin: 0;
+    text-align: center; /* Texto centrado */
 }
 
-/* Estilos para redondear esquinas derechas */
-.redondeo-derecha {
-    border-radius: 0px 50px 50px 0px; /* Solo esquinas derechas redondeadas */
-    margin: 25px 20px 25px 0px; /* Márgenes específicos para separación */
+.texto ul {
+    font-size: 1.1rem; /* Tamaño predeterminado para listas */
+    line-height: 1.6;
+    color: white; /* Contraste en el gradiente */
+    margin: 0;
+    text-align: center; /* Texto centrado */
+    list-style-type: circle; /* Estilo de lista */
+    padding-left: 20px; /* Espaciado interno para listas */
 }
 
-/* Estilos para redondear esquinas izquierdas */
-.redondeo-izquierda {
-    border-radius: 50px 0px 0px 50px; /* Solo esquinas izquierdas redondeadas */
-    margin: 25px 0px 25px 20px; /* Márgenes específicos para separación */
+.texto li {
+    margin-bottom: 10px; /* Espaciado entre ítems */
+    padding-left: 0px;
 }
 
-/* Margen general para el contenedor quienes somos */
-#quienes_somos .fondo{
-    margin-bottom: 50px; /* Espacio alrededor de la sección principal */
+/* Responsividad para móvil */
+@media (max-width: 768px) {
+    .bloque {
+        flex-direction: column; /* Imagen arriba, texto abajo */
+    }
+
+    .bloque img {
+        width: 100%; /* Imagen ocupa todo el ancho */
+        margin-bottom: 20px; /* Espacio debajo de imagen */
+    }
+
+    .texto h1 {
+        font-size: 1.5rem; /* Títulos más pequeños en móviles */
+    }
+
+    .texto p, .texto ul {
+        font-size: 1rem; /* Texto compacto en móviles */
+    }
+}
+
+/* Responsividad para escritorio */
+@media (min-width: 768px) {
+    .bloque {
+        flex-direction: row; /* Imagen y texto lado a lado */
+        justify-content: space-between; /* Separación proporcional entre columnas */
+        align-items: center; /* Centra verticalmente los elementos */
+    }
+
+    .bloque img {
+        flex: 0 0 40%; /* Imagen ocupa el 40% */
+        width: 45%; /* Imagen fija el ancho */
+        margin-bottom: 0; /* Sin espacio debajo de imagen */
+    }
+
+    .texto {
+        flex: 0 0 50%; /* Texto ocupa el 55% */
+        align-items: center; /* Centra contenido dentro del contenedor */
+        text-align: center; /* Texto alineado al centro */
+    }
+
+    .texto h1 {
+        font-size: 2rem; /* Títulos más grandes en pantallas grandes */
+    }
+
+    .texto p, .texto ul {
+        font-size: 1.2rem; /* Texto más grande en escritorio */
+    }
 }

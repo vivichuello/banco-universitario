@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misión y Visión | Banco Universitario</title>
+
+
+
+    <!-- Archivo CSS del footer -->
+    <link rel="stylesheet" href="./footer.css">
+     
+    <!-- Archivo CSS de servicios -->
+    <link rel="stylesheet" href="./servicios.css">
+
+    <!-- Fuente Awesome para iconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!--Encabezado-->
+    <section id="encabezado-seccion">
+
+        <div id="encabezado"></div>
+        <script>
+
+            fetch('./encabezado.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('encabezado').innerHTML = data;
+                })
+                .catch(error => console.error('Error al cargar el encabezado:', error));
+        </script>
+    </section>
+
+    <section id="servicios-generales">
+
+        <h1>Nuestros Servicios</h1>
+        
+        <div id="servicios-en-linea">
+
+            <h1>Servicios en linea</h1>
+
+            <div id="contenedor-tarjetas">
+
+                <div class="bloque">
+                    <img src="../assets/transferencia.jpg">
+                    <div class="texto">
+                        <h2>Transferencias sin comisión</h2>
+                        <p> "Envía dinero entre estudiantes de forma rápida, 
+                            segura y sin costos adicionales."</p>
+                    </div>
+                </div>
+                
+                <div class="bloque">
+                    <img src="../assets/movimientos.jpeg">
+                    <div class="texto">
+                        <h2>Consulta de saldo y movimientos</h2>
+                        <p>"Accede a tu saldo y 
+                            movimientos financieros filtrados por tipo de operación."</p>
+                    </div>
+                </div>
+                
+                <div class="bloque">
+                    <img src="../assets/contactos.jpg">
+                    <div class="texto">
+                        <h2>Gestión de contactos frecuentes</h2>
+                        <p>"Actualiza tu contraseña con facilidad para proteger tu cuenta."</p>
+                    </div>
+                </div>
+                
+                <div class="bloque">
+                    <img src="../assets/contraseña.jpg" >
+                    <div class="texto">
+                        <h2>Cambio de contraseña</h2>
+                        <p> "Organiza, edita o elimina tus contactos frecuentes para transferencias rápidas."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="servicios-sucursales">
+
+            <h1>Servicios en Nuestras Sucursales</h1>
+
+            <div id="contenedor-tarjetas">
+                <div class="bloque">
+                    <img src="../assets/deposito.jpg">
+                    <div class="texto">
+                        <h2>Depósitos en efectivo</h2>
+                        <p>  "Deposita dinero de forma segura en cualquiera de nuestras sucursales disponibles 24/7."</p>
+                    </div>
+                </div>
+                
+                <div class="bloque">
+                    <img src="../assets/retiro.JPG">
+                    <div class="texto">
+                        <h2>Retiros en efectivo</h2>
+                        <p>"Retira tus fondos fácilmente con seguridad garantizada en nuestras oficinas."</p>
+                    </div>
+                </div>
+                
+                <div class="bloque">
+                    <img src="../assets/cobro-becas.jpeg">
+                    <div class="texto">
+                        <h2>Cobro de becas estudiantiles</h2>
+                        <p>"Accede a tus fondos de becas de manera rápida y sin complicaciones."</p>
+                    </div>
+                </div>
+                
+                <div class="bloque">
+                    <img src="../assets/pago-matricula.jpg" >
+                    <div class="texto">
+                        <h2>Pago de matrícula estudiantil</h2>
+                        <p> "Realiza tus pagos de matrícula en nuestras sucursales de forma ágil y segura."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </section>
+    
+    
+    
+
+    <!-- Pie de página -->
+    <div id="footer"></div>
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('footer').innerHTML = html;
+            });
+    </script>
+</body>
+</html>

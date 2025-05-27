@@ -1,28 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banco Universitario</title>
 
-    <!-- Archivo CSS principal -->
+    <!-- Archivos CSS -->
     <link rel="stylesheet" href="./sitio_web_institucional.css">
-
-    <!-- Archivo CSS del footer -->
     <link rel="stylesheet" href="./footer.css">
-
-    <!-- Fuente Awesome para iconos -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <!--Encabezado-->
-    <section id="encabezado-seccion">
 
+    <!-- Encabezado -->
+    <section id="encabezado-seccion">
         <div id="encabezado"></div>
         <script>
-
             fetch('./encabezado.html')
                 .then(response => response.text())
                 .then(data => {
@@ -32,34 +27,33 @@
         </script>
     </section>
 
-    <!--Slider de tarjetas-->
+    <!-- Slider de tarjetas -->
     <section id="slider-seccion">
         <div class="slider-contenedor">
             <div class="slider">
-
                 <article class="slider-tarjeta" id="tarjeta-1">
                     <img src="../assets/estudiantes.jpeg" alt="">
                     <div class="slider-tarjeta-texto">
-                        <h2>¡Paga sin comision!</h2>
-                        <p>Realiza transferencias a tus amigos y <br>compañeros sin pagar demas</p>
+                        <h2>¡Paga sin comisión!</h2>
+                        <p>Realiza transferencias a tus amigos y compañeros sin pagar de más</p>
                     </div>
                 </article>
 
                 <article class="slider-tarjeta" id="tarjeta-2">
                     <img src="../assets/bolivares.png" alt="">
                     <div class="slider-tarjeta-texto">
-                        <h2>¡Cobra tus becas en <br>nuestras sucursales¡</h2>
-                        <p>Ahora con Banco Universitario es mas facil cobrar tus beneficios</p>
-                    </div>
-                </article>
-                <article class="slider-tarjeta" id="tarjeta-3">
-                    <img src="../assets/estudiante.jpeg">
-                    <div class="slider-tarjeta-texto">
-                        <h2>¡Paga tu matricula en tu matricula!</h2>
-                        <p>Paga tu matricula estudiantil en cualquiera de nuestras sucursales</p>
+                        <h2>¡Cobra tus becas en nuestras sucursales!</h2>
+                        <p>Ahora con Banco Universitario es más fácil cobrar tus beneficios</p>
                     </div>
                 </article>
 
+                <article class="slider-tarjeta" id="tarjeta-3">
+                    <img src="../assets/estudiante.jpeg">
+                    <div class="slider-tarjeta-texto">
+                        <h2>¡Paga tu matrícula con facilidad!</h2>
+                        <p>Paga tu matrícula estudiantil en cualquiera de nuestras sucursales</p>
+                    </div>
+                </article>
             </div>
             <div class="slider-nav">
                 <a href="#tarjeta-1"></a>
@@ -69,84 +63,85 @@
         </div>
     </section>
 
-    <!--Iconos-->
+    <!-- Script para funcionamiento del slider -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const slides = document.querySelectorAll('.slider-tarjeta');
+            const navDots = document.querySelectorAll('.slider-nav a');
+            let currentIndex = 0;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.style.display = i === index ? 'block' : 'none';
+                });
+
+                navDots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % slides.length;
+                showSlide(currentIndex);
+            }
+
+            setInterval(nextSlide, 5000);
+            showSlide(currentIndex);
+        });
+    </script>
+
+    <!-- Iconos -->
     <section id="iconos-seccion">
-
         <div class="iconos-contenedor">
-
             <div class="icono">
-                <figure>
-                    <img src="../assets/cuenta.svg" alt="Icono de cuenta" id="icono-cuenta">
-                </figure>
+                <figure><img src="../assets/cuenta.svg" alt="Icono de cuenta" id="icono-cuenta"></figure>
                 <h4>Cuentas</h4>
             </div>
-
             <div class="icono">
-                <figure>
-                    <img src="../assets/tarjeta-credito.svg" alt="Icono de tarjeta" id="icono-tarjeta">
-                </figure>
+                <figure><img src="../assets/tarjeta-credito.svg" alt="Icono de tarjeta" id="icono-tarjeta"></figure>
                 <h4>Tarjetas</h4>
             </div>
-
             <div class="icono limites">
-                <figure>
-                    <img src="../assets/billete.svg" alt="Icono de limites" id="icono-limites">
-                </figure>
-                <h4>Limites diarios</h4>
+                <figure><img src="../assets/billete.svg" alt="Icono de límites" id="icono-limites"></figure>
+                <h4>Límites diarios</h4>
             </div>
         </div>
     </section>
 
-    <!--Tarjetas-->
+    <!-- Tarjetas informativas -->
     <section id="tarjetas-informativas">
         <div class="contenedor">
-
             <div class="tarjeta">
                 <h2>Resguarda tu futuro</h2>
-                <p>Saber manejar tu dinero es vital, aprende con nosotros
-                    sobre la educación finaciera</p>
-
+                <p>Saber manejar tu dinero es vital, aprende con nosotros sobre educación financiera</p>
             </div>
-
-
             <div class="tarjeta">
                 <h2>Servicios Presenciales</h2>
-                <p>Descubre todo lo que puedes hacer
-                    en nuestras sucursales</p>
-                <button onclick="location.href='servicios.html'">¡Presiona aqui!</button>
+                <p>Descubre todo lo que puedes hacer en nuestras sucursales</p>
+                <button onclick="location.href='servicios.html'">¡Presiona aquí!</button>
             </div>
-
             <div class="tarjeta">
-                <h2>Conoce mas sobre nosotros</h2>
+                <h2>Conoce más sobre nosotros</h2>
                 <button onclick="location.href='quienes_somos.html'">¡Conócenos!</button>
             </div>
-
             <div class="tarjeta">
                 <h2>Comprometidos con el futuro del país</h2>
-                <p>Tenemos como meta formar alianzas poderosas
-                    para potenciar el futuro de nuestros estudiantes</p>
-
-
+                <p>Tenemos como meta formar alianzas poderosas para potenciar el futuro de nuestros estudiantes</p>
             </div>
         </div>
     </section>
 
-
-
-    <!--Pie de pagina-->
+    <!-- Pie de página -->
     <section id="footer-seccion">
-
         <div id="footer"></div>
         <script>
-            // Cargar el contenido del footer dinámicamente
             fetch('footer.html')
                 .then(response => response.text())
                 .then(html => {
                     document.getElementById('footer').innerHTML = html;
                 });
         </script>
-
+    </section>
 
 </body>
-
 </html>
